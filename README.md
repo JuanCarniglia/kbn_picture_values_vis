@@ -8,9 +8,11 @@ If you really liked this and feel like making a donation : <a href="https://www.
 </a>
 
 ![Screenshot](screenshot2.png)
+
 One value, showing a smiling face if the value is over $5000 and a sad face if it is not.
 
 ![Screenshot](screenshot.png)
+
 One value, showing a number in Bytes and an image according to disk storage.
 
 ##Installation Steps
