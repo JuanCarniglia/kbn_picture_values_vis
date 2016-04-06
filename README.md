@@ -54,9 +54,13 @@ For each one, it defines:
   - A label (string) or title.
   - A letter (character actually)
   - An optional numeric Format (for instance, to display currency or something else).
-  - Optional Ranges (These are used to display different font-awesome icons, depending on where the value falls. The ranges should be suplementary and not step on each other (i.e. 0-100 100-500 500-1000). For each range an icon is defined (which superseed the character defined at the main level, unless the value falls out of range).
+  - Optional Ranges 
 
-The order in which the main items (the items in the main collection) is defined is important, as it should match the order of the aggregations.
+These are used to display different font-awesome icons, depending on where the value falls.
+The ranges should be suplementary and not step on each other (i.e. 0-100 100-500 500-1000). 
+For each range an icon, and a text color are defined (which superseed the character defined at the main level, unless the value falls out of range). 
+  
+!! The order in which the main items (the items in the main collection) is defined is important, as it should match the order of the aggregations.
 
 You can also choose whether to show pictures (icons) at all.
 
