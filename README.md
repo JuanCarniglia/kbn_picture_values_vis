@@ -3,7 +3,7 @@
 This is a Metric visualization (visType for Kibana, version 4.4.1) that actually goes a little 
 beyond the metric visualization currentyl shipped with Kibana.
 
-If you really liked this and feel like making a donation : <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=juan.carniglia@gmail.com&lc=AR&item_name=JuanCarniglia&item_number=1004&currency_code=USD&bn=PP-DonationsBF:btn_donate_LG.gif:NonHosted">
+If you really liked this and feel like making a donation : <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=juan.carniglia@gmail.com&lc=AR&item_name=JuanCarniglia&item_number=1005&currency_code=USD&bn=PP-DonationsBF:btn_donate_LG.gif:NonHosted">
 <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" alt="Contribute!" />
 </a>
 
