@@ -65,8 +65,8 @@ For each range an icon, and a text color are defined (which superseed the charac
 
 You can also choose whether to show pictures (icons) at all.
 
-Check out numeral format options at <http://numeraljs.com/>(NumeralJS documentation).
+Check out numeral format options at NumeralJS documentation. <http://numeraljs.com/>.
 
-Check out all available fontAwesome icons at the <http://fortawesome.github.io/Font-Awesome/cheatsheet/>( fontAwesome Cheat Sheet
+Check out all available fontAwesome icons at the fontAwesome Cheat Sheet. <http://fortawesome.github.io/Font-Awesome/cheatsheet/>.
 
 Remember to surround each field name with double quotes and to change the fontAwesome codes from `"&#xf12d;"` into just `"\uf12d"`.
