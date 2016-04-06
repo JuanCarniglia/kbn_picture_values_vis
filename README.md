@@ -29,6 +29,7 @@ cp -R build/kbn_picture_values_vis/ KIBANA_HOME/installedPlugins
 ```
 
 ** Note: this plugins requires numeral.js
+** If you don't have it, you can just `npm install -g numeral` or install the plugin.
 
 ##How does it work
 
@@ -64,3 +65,8 @@ For each range an icon, and a text color are defined (which superseed the charac
 
 You can also choose whether to show pictures (icons) at all.
 
+Check out numeral format options at <http://numeraljs.com/>(NumeralJS documentation).
+
+Check out all available fontAwesome icons at the <http://fortawesome.github.io/Font-Awesome/cheatsheet/>( fontAwesome Cheat Sheet
+
+Remember to surround each field name with double quotes and to change the fontAwesome codes from "&#xf12d;" into just "\uf12d".
