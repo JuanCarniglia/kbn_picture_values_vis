@@ -40,12 +40,18 @@ In order to work this plugins needs a simple Schema configuration:
 
 ```
 [ 
-{ "text" : "CUENTA", "letter" : "\uf119", "numeralFormat": "$0,0.0", "ranges" : [ 
-   { "min" : 0, "max": 2000, "letter" : "\uf119"},
-   { "min" : 2000, "max": 10000, "letter" : "\uf118"} ] },
-{ "text" : "PROMEDIO", "letter" : "\uf119", "numeralFormat": "$0,0.000", "ranges" : [ 
-   { "min" : 0, "max": 0.8, "letter" : "\uf119"},
-   { "min" : 0.8, "max": 10, "letter" : "\uf118"} ] }
+   { "text" : "CUENTA", "letter" : "\uf119", "numeralFormat": "$0,0.0", "ranges" : 
+      [ 
+         { "min" : 0,    "max": 2000,  "valueColor" : "red",   "letter" : "\uf119"},
+         { "min" : 2000, "max": 10000, "valueColor" : "green", "letter" : "\uf118"} 
+      ] 
+   },
+   { "text" : "PROMEDIO", "letter" : "\uf119", "numeralFormat": "$0,0.000", "ranges" : 
+      [ 
+         { "min" : 0,   "max": 0.8, "valueColor" : "red",   "letter" : "\uf119"},
+         { "min" : 0.8, "max": 10,  "valueColor" : "green", "letter" : "\uf118"} 
+      ] 
+   }
 ]
 ```
 
