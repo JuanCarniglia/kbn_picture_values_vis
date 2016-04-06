@@ -25,9 +25,11 @@ define(function (require) {
 
 					var valueFormatted = d.formatNumber ? numeral(d.value).format(d.formatNumber) : d.value;
 
-					svgResult.append("svg:text").attr("class", "svgNumberValue").attr("x", "0px").attr("y", "30px").text(valueFormatted);
+					svgResult.append("svg:text").attr("class", "svgNumberValue").attr("x", "0px").attr("y", "30px").style("fill", d.valueColor).text(valueFormatted);
 
-					svgResult.append("svg:text").attr("class", "fa svgNumberPicture").attr("x", "145px").attr("y", "100px").text(d.letter);
+                    if ($scope.vis.params.showPictures) {
+					    svgResult.append("svg:text").attr("class", "fa svgNumberPicture").attr("x", "145px").attr("y", "100px").text(d.letter);
+                    }
 				});
 			};
 
