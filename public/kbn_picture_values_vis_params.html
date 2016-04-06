@@ -5,17 +5,31 @@
 <div class="form-group">
     <label>json Labels </label>
     <label>Example : <br/>
-[<br/>
-  { "text" : "CUENTA", "letter" : "\uf119", "numeralFormat" : "$0,0.00", "ranges" :<br/>
-   [<br/>
-    { "min" : 0,    "max": 2000,  "letter" : "\uf119"},<br/>
-    { "min" : 2000, "max": 10000, "letter" : "\uf118"}<br/>
-   ]<br/>
-  }<br/>
-]<br/>
-<br/>
-<small class="pull-right">
-  Check out numeral format options at <br/><a ng-href="http://numeraljs.com/" target="_blank">NumeralJS documentation<i class="fa fa-link"></i></a>
+<pre style="height:100px;width:320px">
+[
+  { "text" : "CUENTA",
+	"letter" : "\uf119",
+	"numeralFormat" : "$0,0.00",
+	"ranges" :
+       [
+        { "min" : 0,
+		"max": 2000,
+		"valueColor" : "red",
+		"letter" : "\uf119"},
+        { "min" : 2000,
+		"max": 10000,
+		"valueColor" : "green",
+		"letter" : "\uf118"}
+       ]
+  }
+]
+</pre>
+<small class="pull-middle">
+  Check out numeral format options at <a ng-href="http://numeraljs.com/" target="_blank">NumeralJS documentation<i class="fa fa-link"></i></a>
+  <br/>
+  And available fontAwesome icons at the <a ng-href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_blank">cheat sheet<i class="fa fa-link"></i></a>
+  <br/>
+  Remember to surround each field name with double quotes and to change the fontAwesome codes from "&#xf12d;" into just "\uf12d".
 </small>
 
 </label>
