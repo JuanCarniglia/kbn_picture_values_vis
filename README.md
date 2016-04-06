@@ -1,50 +1,60 @@
-# Kibana BoxPlot Visualization Plugin
+# Kibana Metric (improved, I think) Visualization Plugin
 
-This is a BoxPlot diagram visType for Kibana, version 4.4.1.
-
-This plugin is based on the exceptional D3 library,
-by @mbostock [D3 Gallery](https://github.com/mbostock/d3/wiki/Gallery) (Thanks!).
-
-And also on this [sample code](http://bl.ocks.org/z-m-k/5014368).
+This is a Metric visualization (visType for Kibana, version 4.4.1) that actually goes a little 
+beyond the metric visualization currentyl shipped with Kibana.
 
 If you really liked this and feel like making a donation : <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=juan.carniglia@gmail.com&lc=AR&item_name=JuanCarniglia&item_number=1004&currency_code=USD&bn=PP-DonationsBF:btn_donate_LG.gif:NonHosted">
 <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" alt="Contribute!" />
 </a>
 
+![Screenshot](screenshot2.png)
+One value, showing a smiling face if the value is over $5000 and a sad face if it is not.
+
 ![Screenshot](screenshot.png)
+One value, showing a number in Bytes and an image according to disk storage.
 
 ##Installation Steps
 
-(Theses are optional, you can just copy the kbn_boxplot_violin_vis folder into
+(Theses are optional, you can just copy the kbn_picture_values_vis folder into
 KIBANA_HOME/src/plugins) and run kibana.
 
 ```
-git clone https://github.com/JuanCarniglia/kbn_boxplot_violin_vis.git 
-cd kbn_boxplot_violin_vis
+git clone https://github.com/JuanCarniglia/kbn_picture_values_vis.git 
+cd kbn_picture_values_vis
 npm install
 npm run build
-cp -R build/kbn_boxplot_violin_vis/ KIBANA_HOME/installedPlugins
+cp -R build/kbn_picture_values_vis/ KIBANA_HOME/installedPlugins
 ```
+
+** Note: this plugins requires numeral.js
 
 ##How does it work
 
 In order to work this plugins needs a simple Schema configuration:
 
-- One Count Parameters
-- Two levels of aggregattion (these will separate each dataset for each boxplot).
+- One Metric Parameter
+- A Json to set some things up:
 
-Also, there are some options:
+```
+[ 
+{ "text" : "CUENTA", "letter" : "\uf119", "numeralFormat": "$0,0.0", "ranges" : [ 
+   { "min" : 0, "max": 2000, "letter" : "\uf119"},
+   { "min" : 2000, "max": 10000, "letter" : "\uf118"} ] },
+{ "text" : "PROMEDIO", "letter" : "\uf119", "numeralFormat": "$0,0.000", "ranges" : [ 
+   { "min" : 0, "max": 0.8, "letter" : "\uf119"},
+   { "min" : 0.8, "max": 10, "letter" : "\uf118"} ] }
+]
+```
 
-- Show Violin
-- Show BoxPlot
-- Show Percentage
-- Show Value
-- Line Color
-- Box Color
-- Box Width (10 - 200 px)
-- Y Axis Line Color
-- Y Axis Text Color
-- Y Axis Infer Domain (This will use ALL data to infer lower and upper limits for the domain)
-- Y Axis Lower Bound Domain
-- Y Axis Upper Bound Domain
+In this example, the JSON string sets up two different labels/values/icons.
+
+For each one, it defines:
+  - A label (string) or title.
+  - A letter (character actually)
+  - An optional numeric Format (for instance, to display currency or something else).
+  - Optional Ranges (These are used to display different font-awesome icons, depending on where the value falls. The ranges should be suplementary and not step on each other (i.e. 0-100 100-500 500-1000). For each range an icon is defined (which superseed the character defined at the main level, unless the value falls out of range).
+
+The order in which the main items (the items in the main collection) is defined is important, as it should match the order of the aggregations.
+
+You can also choose whether to show pictures (icons) at all.
 
