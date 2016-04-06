@@ -1,0 +1,23 @@
+<div class="form-group">
+    <label>Show Pictures</label>
+    <input type="checkbox" ng-model="vis.params.showPictures" ng-checked="true" class="ng-pristine ng-valid ng-touched">
+</div>
+<div class="form-group">
+    <label>json Labels </label>
+    <label>Example : <br/>
+[
+  { "text" : "CUENTA", "letter" : "\uf119", "numeralFormat" : "$0,0.00", "ranges" :
+   [
+    { "min" : 0,    "max": 2000,  "letter" : "\uf119"},
+    { "min" : 2000, "max": 10000, "letter" : "\uf118"}
+   ]
+  }
+]
+
+<small class="pull-right">
+  Check out numeral format options at <a ng-href="http://numeraljs.com/" target="_blank">NumeralJS documentation<i class="fa fa-link"></i></a>
+</small>
+
+</label>
+    <textarea rows="20" ng-model="vis.params.jsonLabels" class="form-control"></textarea>
+</div>
