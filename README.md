@@ -69,4 +69,4 @@ Check out numeral format options at <http://numeraljs.com/>(NumeralJS documentat
 
 Check out all available fontAwesome icons at the <http://fortawesome.github.io/Font-Awesome/cheatsheet/>( fontAwesome Cheat Sheet
 
-Remember to surround each field name with double quotes and to change the fontAwesome codes from "&#xf12d;" into just "\uf12d".
+Remember to surround each field name with double quotes and to change the fontAwesome codes from `"&#xf12d;"` into just `"\uf12d"`.
