@@ -34,7 +34,7 @@ cp -R build/kbn_picture_values_vis/ KIBANA_HOME/installedPlugins
 ** Note that in NTFS file systems, file paths that exceed 260 characters will fail with cp, you have to use ROBOCOPY:
 
 ```
-robocopy /S build/kbn_sankey_vis KIBANA_FOLDER_PATH/installedPlugins/kbn_sankey_vis
+robocopy /S build/kbn_picture_values_vis KIBANA_FOLDER_PATH/installedPlugins/kbn_picture_values_vis
 ```
 
 ** Also note that if npm run build fails, with a rsync.js error, it is likelly that you don't have RSYNC.EXE installed
