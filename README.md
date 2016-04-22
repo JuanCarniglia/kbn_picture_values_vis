@@ -31,6 +31,21 @@ cp -R build/kbn_picture_values_vis/ KIBANA_HOME/installedPlugins
 ** Note: this plugins requires numeral.js
 ** If you don't have it, you can just `npm install -g numeral` or install the plugin.
 
+** Note that in NTFS file systems, file paths that exceed 260 characters will fail with cp, you have to use ROBOCOPY:
+
+```
+robocopy /S build/kbn_sankey_vis KIBANA_FOLDER_PATH/installedPlugins/kbn_sankey_vis
+```
+
+** Also note that if npm run build fails, with a rsync.js error, it is likelly that you don't have RSYNC.EXE installed
+in your system, and also that you don't have it on your PATH environment variable.
+
+Install it from https://www.itefix.net/cwrsync and run:
+
+```
+set PATH=%PATH%;{rsync installation directory}\bin
+```
+
 ##How does it work
 
 In order to work this plugins needs a simple Schema configuration:
