@@ -4,6 +4,10 @@
   "authors": [
     "Juan Carniglia <juan.carniglia@gmail.com>"
   ],
+  "repository": {
+  "type": "git",
+  "url": "git://github.com/JuanCarniglia/kbn_picture_values_vis.git"
+  },
   "description": "Values display with associated pictures - Visualization Plugin",
   "main": "index.js",
   "license": "Apache-2.0",
