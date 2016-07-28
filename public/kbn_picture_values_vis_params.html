@@ -1,30 +1,22 @@
 <div class="form-group">
+  <label>Label Font Size - {{ vis.params.fontSizeLabel }}pt</label>
+  <input type="range" ng-model="vis.params.fontSizeLabel" class="form-control" min="12" max="60" />
+</div>
+<div class="form-group">
+  <label>Value Font Size - {{ vis.params.fontSizeValue }}pt</label>
+  <input type="range" ng-model="vis.params.fontSizeValue" class="form-control" min="12" max="60" />
+</div>
+<div class="form-group">
     <label>Show Pictures</label>
     <input type="checkbox" ng-model="vis.params.showPictures" ng-checked="true" class="ng-pristine ng-valid ng-touched">
 </div>
 <div class="form-group">
-    <label>json Labels </label>
-    <label>Example : <br/>
-<pre style="height:100px;width:320px">
-[
-  { "text" : "CUENTA",
-	"letter" : "\uf119",
-	"numeralFormat" : "$0,0.00",
-	"ranges" :
-       [
-        { "min" : 0,
-		"max": 2000,
-		"valueColor" : "red",
-		"letter" : "\uf119"},
-        { "min" : 2000,
-		"max": 10000,
-		"valueColor" : "green",
-		"letter" : "\uf118"}
-       ]
-  }
-]
-</pre>
-<small class="pull-middle">
+  <label>json Labels</label>
+  <br/>
+  <small class="pull-middle">
+    Check out json options at <a ng-href="http://github.com/JuanCarniglia/kbn_picture_values_vis" target="_blank">Vis Home Page<i class="fa fa-link"></i></a><br/>
+  </small>
+    <small class="pull-middle">
   Check out numeral format options at <a ng-href="http://numeraljs.com/" target="_blank">NumeralJS documentation<i class="fa fa-link"></i></a>
   <br/>
   And available fontAwesome icons at the <a ng-href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_blank">cheat sheet<i class="fa fa-link"></i></a>
@@ -33,5 +25,5 @@
 </small>
 
 </label>
-    <textarea rows="20" ng-model="vis.params.jsonLabels" class="form-control"></textarea>
+    <div ng-model="vis.params.jsonLabels" style='height:200px;' ui-ace="{ onLoad: aceLoaded, mode: 'json' }" id="vis.params.jsonLabels" ng-model="field.value" class="form-control"></div>
 </div>

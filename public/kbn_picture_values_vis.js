@@ -21,6 +21,11 @@ define(function (require) {
         defaults: {
           showText: true,
           showValues: true,
+          jsonLabels: '[{ "text" : "CUENTA", "letter" : "\uf119", "numeralFormat": "$0,0.0", ' +
+          '"ranges" : [{ "min" : 0,    "max": 2000,  "valueColor" : "red",   "letter" : "\uf119"},' +
+          '{ "min" : 2000, "max": 10000, "valueColor" : "green", "letter" : "\uf118"}]}]',
+          fontSizeLabel: 14,
+          fontSizeValue: 14,
           showMetricsAtAllLevels: false
         },
         editor: require('plugins/kbn_picture_values_vis/kbn_picture_values_vis_params.html')
@@ -34,6 +39,7 @@ define(function (require) {
           name: 'metric',
           title: 'Value',
           min: 1,
+          max: 1,
           defaults: [
             {type: 'count', schema: 'metric'}
           ]
@@ -43,6 +49,5 @@ define(function (require) {
     });
   }
 
-  // export the provider so that the visType can be required with Private()
   return KbnPictureValuesVisProvider;
 });
