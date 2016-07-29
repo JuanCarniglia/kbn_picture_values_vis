@@ -3,6 +3,7 @@ define(function (require) {
   var module = require('ui/modules').get('kibana/kbn_picture_values_vis', ['kibana']);
 
   var d3 = require('d3');
+  var $ = require('jquery');
   var _ = require('lodash');
   var numeral = require('numeral');
 
@@ -13,8 +14,12 @@ define(function (require) {
 
       var svgRoot = $element[0];
 
-      var _buildVis = function _buildVis(results) {
+      var _render = function _render(results) {
+
         _.each(results, function (d, i) {
+
+          $(svgRoot).empty();
+
           var svgResult = d3.select(svgRoot)
             .append('svg')
             .attr('role', 'values_container')
@@ -51,17 +56,9 @@ define(function (require) {
         });
       };
 
-      var _render = function _render(data) {
-        // Cleanning
-        d3.selectAll('[role="values_container"]').remove();
-
-        _buildVis(data);
-      };
-
       $scope.$watch('esResponse', function (resp) {
         if (resp) {
-          var chartData = pictureValuesAggResponse($scope.vis, resp);
-          _render(chartData);
+          _render(pictureValuesAggResponse($scope.vis, resp));
         }
       });
     });
