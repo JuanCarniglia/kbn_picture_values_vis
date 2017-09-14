@@ -1,12 +1,15 @@
-define(function (require) {
-  var _ = require('lodash');
-  var ace = require('ace');
+  import _  from 'lodash';
+  import ace from 'ace';
 
-  require('ui/modules').get('kibana/kbn_picture_values_vis')
+  import kbnPictureValuesVisParamsTemplate from 'plugins/kbn_picture_values_vis/kbn_picture_values_vis_params.html';
+
+  import { uiModules } from 'ui/modules';
+
+  uiModules.get('kibana/kbn_picture_values_vis')
   .directive('npsTableVisParams', function () {
     return {
       restrict: 'E',
-      template: require('plugins/kbn_picture_values_vis/kbn_picture_values_vis_params.html'),
+      template: kbnPictureValuesVisParamsTemplate,
       link: function ($scope) {
 
         var editor;
@@ -34,5 +37,5 @@ define(function (require) {
         });
       }
     };
-  });
-});
+  }
+);

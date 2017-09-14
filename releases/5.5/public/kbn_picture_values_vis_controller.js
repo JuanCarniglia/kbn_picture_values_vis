@@ -1,16 +1,20 @@
-define(function (require) {
+  import {
+    uiModules
+  } from 'ui/modules';
 
-  var module = require('ui/modules').get('kibana/kbn_picture_values_vis', ['kibana']);
+  import d3 from 'd3';
+  import $ from 'jquery';
+  import _ from 'lodash';
+  import numeral from 'numeral';
 
-  var d3 = require('d3');
-  var $ = require('jquery');
-  var _ = require('lodash');
-  var numeral = require('numeral');
+  import AggResponseProvider from './lib/agg_response';
+
+  const module = uiModules.get('kibana/kbn_picture_values_vis', ['kibana']);
 
   module.controller('KbnPictureValuesVisController',
     function ($scope, $element, $rootScope, Private) {
 
-      var pictureValuesAggResponse = Private(require('./lib/agg_response'));
+      var pictureValuesAggResponse = Private(AggResponseProvider);
 
       var svgRoot = $element[0];
 
@@ -62,4 +66,3 @@ define(function (require) {
         }
       });
     });
-});

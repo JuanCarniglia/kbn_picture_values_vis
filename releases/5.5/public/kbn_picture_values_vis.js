@@ -1,15 +1,26 @@
-define(function (require) {
-  require('ui/agg_table');
-  require('ui/agg_table/agg_table_group');
+  import 'ui/agg_table';
+  import 'ui/agg_table/agg_table_group';
 
-  require('plugins/kbn_picture_values_vis/kbn_picture_values_vis.less');
-  require('plugins/kbn_picture_values_vis/kbn_picture_values_vis_controller');
+  import 'plugins/kbn_picture_values_vis/kbn_picture_values_vis.less';
+  import 'plugins/kbn_picture_values_vis/kbn_picture_values_vis_controller';
 
-  require('ui/registry/vis_types').register(KbnPictureValuesVisProvider);
+  import {
+    TemplateVisTypeProvider
+  } from 'ui/template_vis_type/template_vis_type';
+  import {
+    VisSchemasProvider
+  } from 'ui/vis/schemas';
+  import kbnPictureValuesVisTemplate from 'plugins/kbn_picture_values_vis/kbn_picture_values_vis.html';
+
+  import {
+    VisTypesRegistryProvider
+  } from 'ui/registry/vis_types';
+
+  VisTypesRegistryProvider.register(KbnPictureValuesVisProvider);
 
   function KbnPictureValuesVisProvider(Private) {
-    var TemplateVisType = Private(require('ui/template_vis_type/TemplateVisType'));
-    var Schemas = Private(require('ui/Vis/Schemas'));
+    const TemplateVisType = Private(TemplateVisTypeProvider);
+    const Schemas = Private(VisSchemasProvider);
 
     var options = [{
       text: 'CUENTA',
@@ -33,7 +44,7 @@ define(function (require) {
       title: 'Pics Metrics',
       icon: 'fa-table',
       description: 'Chart displaying values with Pictures',
-      template: require('plugins/kbn_picture_values_vis/kbn_picture_values_vis.html'),
+      template: kbnPictureValuesVisTemplate,
       params: {
         defaults: {
           showText: true,
@@ -64,5 +75,4 @@ define(function (require) {
     });
   }
 
-  return KbnPictureValuesVisProvider;
-});
+  export default KbnPictureValuesVisProvider;

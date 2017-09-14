@@ -1,4 +1,4 @@
-module.exports = function (kibana) {
+export default function (kibana) {
   return new kibana.Plugin({
     name: 'kbn_picture_values_vis',
     require: ['kibana'],
@@ -8,4 +8,4 @@ module.exports = function (kibana) {
       ]
     }
   });
-};
+}

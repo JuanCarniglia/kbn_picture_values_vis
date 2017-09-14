@@ -1,23 +1,23 @@
-define(function (require) {
-  return function pictureValuesProvider(Private, Notifier) {
-    var _ = require('lodash');
-    var arrayToLinkedList = require('ui/agg_response/hierarchical/_array_to_linked_list');
+import _  from 'lodash';
+import arrayToLinkedList from 'ui/agg_response/hierarchical/_array_to_linked_list';
 
-    var notify = new Notifier({
+module.exports = function pictureValuesProvider(Private, Notifier) {
+
+    let notify = new Notifier({
       location: 'Picture Values Response Converter'
     });
 
-    var nodes = [];
+    let nodes = [];
 
     return function (vis, resp) {
 
-      var metric = vis.aggs.bySchemaGroup.metrics[0];
+      let metric = vis.aggs.bySchemaGroup.metrics[0];
 
       nodes = [];
 
-      var pos = 0;
+      let pos = 0;
 
-      var labels = null;
+      let labels = null;
 
       try {
         labels = JSON.parse(vis.params.jsonLabels); //[ { 'text' : 'CUENTA'}, { 'text' : 'Maximo'}, { 'text' : 'Promedio'} ];
@@ -27,9 +27,9 @@ define(function (require) {
 
       _.each(vis.aggs, function (d, i) {
 
-        var type = d.__type.title;
+        let type = d.__type.title;
 
-        var value = 0;
+        let value = 0;
 
         if (!d.__type.hasNoDsl) {
           value = resp.aggregations[d.id].value;
@@ -39,9 +39,9 @@ define(function (require) {
 
         if (labels.length > pos) {
 
-          var letter = labels[pos].letter; // Default letter to use
+          let letter = labels[pos].letter; // Default letter to use
 
-          var valueColor = 'black'; // default
+          let valueColor = 'black'; // default
 
           if (labels[pos].ranges) {
             _.each(labels[pos].ranges, function (range, p) {
@@ -77,4 +77,3 @@ define(function (require) {
       return nodes;
     };
   };
-});
